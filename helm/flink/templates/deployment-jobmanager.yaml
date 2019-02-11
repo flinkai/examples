@@ -14,6 +14,8 @@ spec:
       - name: jobmanager
         image: {{ .Values.image }}:{{ .Values.imageTag }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
+        securityContext:
+          privileged: true
         args:
         - jobmanager
         ports:
